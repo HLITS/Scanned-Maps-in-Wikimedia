@@ -17,3 +17,17 @@ As described in the [Tasks section of the WikiProject page](https://www.wikidata
 4. Manual editing of Wikidata/Commons map image descriptions
   * Describe map components (e.g. decorative cartouche and vignette depictions, and other non-cartographic entities)
   * Host mini Edit-a-thon
+
+## Postprocessing steps
+
+Wikidata items and their Wikimedia Commons images that have been successfully loaded can be viewed in the [Queries](https://www.wikidata.org/wiki/Wikidata%3AWikiProject_Linked_Data_for_Production%2FScanned_Maps_in_Wikimedia_Commons_and_Wikidata_Project#Queries) section of the WikiProject page.
+
+Steps 3 and 4 listed above can be expanded into the following tasks. These do not have to be accomplished sequentially.
+
+*	Spot check the completed map images in the [Old Maps of China in Harvard Map Collection](https://commons.wikimedia.org/wiki/Category:Old_maps_of_China_in_Harvard_Map_Collection) Wikimedia Commons category for duplicates, multi-sheet images that need to be disambiguated, or other issues that need additional explanation in the file information.
+*	Go back to the list of Wikidata items in the Queries section, and see if there are any images for them remaining in Harvard Library's [Scanned Maps](https://curiosity.lib.harvard.edu/scanned-maps) Digital Collections that weren't loaded before. Also consider using open images from other libraries for anything not found.
+*	Modify the Commons images' authors and publishers with Creator templates, where applicable, or at least a Wikidata/Wikipedia linked name for the author and publisher. For example, type [{{Creator:John Speed}}](https://commons.wikimedia.org/wiki/Creator:John_Speed) into the Author section of [_The kingdome of China_](https://commons.wikimedia.org/wiki/File:The_kingdome_of_China_1626_22088634.jpg) instead of just the text "John Speed."
+*	Add at least English-language captions to Commons images. Translated captions in Chinese, Japanese, and Russian would also be great to crowdsource.
+*	Add Structured Data to Commons images. The preferred starting points would be using the default _depicts_ statement, along with adding the _digital representation of_ statement, and using the map Wikidata item as the value for each. You can use the new [Commons Query Service](https://commons.wikimedia.org/wiki/Commons:SPARQL_query_service/queries/examples) to see which files on the project list don’t have statements yet: https://tinyurl.com/y37x7np7
+*	Add all the images to their respective Wikidata items in the _image(P18)_ statement. This could potentially be done with QuickStatements, or even [TABernacle](https://tabernacle.toolforge.org/#/tab/sparql/SELECT%20%3Fitem%20WHERE%20%7B%0A%20%3Fitem%20wdt%3AP5008%20wd%3AQ99360079.%0A%20%7D/P31%3BLen%3BDen%3BAen).
+*	Crowdsourcing option: encourage people to add [image annotations](https://commons.wikimedia.org/wiki/Help:Gadget-ImageAnnotator), either as stand-alone descriptive notes or [to add Structured Data to specific pixel regions](https://wd-image-positions.toolforge.org/).
